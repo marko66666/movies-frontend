@@ -13,7 +13,7 @@ const ListAndSearchMovies = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:5000/dashboard/movies/search?term=${term}`,
+        `${process.env.REACT_APP_MOVIES_BACKEND_URL}/dashboard/movies/search?term=${term}`,
         {
           headers: { token: localStorage.token },
         }
@@ -29,7 +29,7 @@ const ListAndSearchMovies = () => {
 
   const deleteMovie = async (id) => {
     try {
-      await fetch(`http://localhost:5000/dashboard/movies/${id}`, {
+      await fetch(`${process.env.REACT_APP_MOVIES_BACKEND_URL}/dashboard/movies/${id}`, {
         method: "DELETE",
         headers: { token: localStorage.token },
       }); // index.js, line: 44
@@ -41,7 +41,7 @@ const ListAndSearchMovies = () => {
   };
 
   const getMovies = async () => {
-    const res = await fetch("http://localhost:5000/dashboard", {
+    const res = await fetch(`${process.env.REACT_APP_MOVIES_BACKEND_URL}/dashboard`, {
       headers: { token: localStorage.token },
     }); // sends HTTP GET request to index.js, line: 10
     const movieArray = await res.json();

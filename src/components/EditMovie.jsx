@@ -8,7 +8,7 @@ const EditMovie = ({ movie }) => {
   const editMovie = async (id) => {
     try {
       const body = { title, summary, rating };
-      await fetch(`http://localhost:5000/dashboard/movies/${id}`, {
+      await fetch(`${process.env.REACT_APP_MOVIES_BACKEND_URL}/dashboard/movies/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

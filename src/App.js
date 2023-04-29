@@ -24,10 +24,13 @@ function App() {
 
   async function isAuth() {
     try {
-      const response = await fetch("http://localhost:5000/auth/is-verify", {
-        method: "GET",
-        headers: { token: localStorage.token },
-      });
+      const response = await fetch(
+        process.env.REACT_APP_MOVIES_BACKEND_URL + "/auth/is-verify",
+        {
+          method: "GET",
+          headers: { token: localStorage.token },
+        }
+      );
 
       const parseRes = await response.json();
 

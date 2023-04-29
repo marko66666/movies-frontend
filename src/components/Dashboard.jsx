@@ -7,7 +7,7 @@ const Dashboard = ({ setAuth }) => {
 
   async function getName() {
     try {
-      const response = await fetch("http://localhost:5000/dashboard", {
+      const response = await fetch(`${process.env.REACT_APP_MOVIES_BACKEND_URL}/dashboard`, {
         method: "GET",
         headers: { token: localStorage.token },
       });
