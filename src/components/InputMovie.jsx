@@ -14,7 +14,7 @@ const InputMovie = () => {
       myHeaders.append("token", localStorage.token);
 
       const reqBody = { title, summary, rating };
-      const response = await fetch(`${process.env.REACT_APP_MOVIES_BACKEND_URL}/dashboard/movies`, {
+      await fetch(`${process.env.REACT_APP_MOVIES_BACKEND_URL}/dashboard/movies`, {
         method: "POST",
         headers: myHeaders,
         body: JSON.stringify(reqBody),
