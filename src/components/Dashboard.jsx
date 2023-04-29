@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import InputMovie from "./InputMovie";
 import ListAndSearchMovies from "./ListAndSearchMovies";
 

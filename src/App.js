@@ -1,16 +1,11 @@
-import React, { Fragment, useState, useEffect } from "react";
-import InputMovie from "./components/InputMovie";
-
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import ListAndSearchMovies from "./components/ListAndSearchMovies";
-
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Register from "./components/Register";
